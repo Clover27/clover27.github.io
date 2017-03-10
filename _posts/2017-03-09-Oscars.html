@@ -1,7 +1,12 @@
+---
+layout: post
+title:  "Oscars Nominations"
+categories: Jupyter
+---
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>Thanksgiving -- Clover27</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Oscars Nominations</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11,8 +16,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1107,7 +1112,6 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2536,7 +2540,6 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3027,7 +3030,6 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8758,6 +8760,9 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
+[dir="rtl"] #ipython_notebook {
+  float: right !important;
+}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8960,8 +8965,14 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
+[dir="rtl"] #tabs li {
+  float: right;
+}
 ul#tabs {
   margin-bottom: 4px;
+}
+[dir="rtl"] ul#tabs {
+  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8984,6 +8995,16 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
+}
+[dir="rtl"] .list_toolbar .tree-buttons {
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-right {
+  padding-top: 1px;
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-left {
+  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9120,6 +9141,9 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
+[dir="rtl"] #tree-selector a {
+  float: right;
+}
 #button-select-all {
   min-width: 50px;
 }
@@ -9209,6 +9233,9 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
+[dir="rtl"] #new-menu {
+  text-align: right;
+}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9253,6 +9280,9 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
+}
+[dir="rtl"] #running .col-sm-8 {
+  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9549,6 +9579,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9569,11 +9600,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11244,7 +11270,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 20ex;
+  width: 21ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11556,6 +11582,7 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
+  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11569,6 +11596,9 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
+}
+.terminal-app .terminal .xterm-rows {
+  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11629,8 +11659,10 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11641,9 +11673,11 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11749,19 +11783,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Thanksgiving-Dinner-Data">Thanksgiving Dinner Data<a class="anchor-link" href="#Thanksgiving-Dinner-Data">&#182;</a></h1><p>The dataset came from <a href="https://www.fivethirtyeight.com/">FiveThirtyEight</a>, and can be found <a href="https://github.com/fivethirtyeight/data/tree/master/thanksgiving-2015">here</a>.</p>
-<p>The dataset has 65 columns, and 1058 rows. Most of the column names are questions, and most of the column values are string responses to the questions. Most of the columns are categorical, as a survey respondent had to select one of a few options. For example, one of the first column names is <em>What is typically the main dish at your Thanksgiving dinner?</em>. The potential responses are:</p>
-<ul>
-<li>Turkey</li>
-<li>Other (please specify)</li>
-<li>Ham/Pork</li>
-<li>Tofurkey</li>
-<li>Chicken</li>
-<li>Roast beef</li>
-<li>I don't know</li>
-<li>Turducken  </li>
-</ul>
-<p>Most of the columns follow the same question/response format as the above. There are also quite a few <em><code>NaN</code></em> values in the columns, which occurred when a survey respondent didn't fill out a question because they didn't want to, or it didn't apply to them.</p>
+<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1><p>We'll work with data on Academy Award nominations, which can be downloaded <a href="https://www.aggdata.com/awards/oscar">here</a>. The Academy Awards, also known as the Oscars, is an annual awards ceremony hosted to recognize the achievements in the film industry. There are many different awards categories and the members of the academy vote every year to decide which artist or film should get the award. The awards categories have changed over the years, and you can learn more about when categories were added on <a href="http://bit.ly/1Rig7Gs">Wikipedia</a>.</p>
 
 </div>
 </div>
@@ -11771,180 +11793,12 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import data</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;thanksgiving.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;Latin-1&quot;</span><span class="p">)</span>
-<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">awards</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;academy_awards.csv&quot;</span><span class="p">,</span><span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;ISO-8859-1&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[1]:</div>
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>RespondentID</th>
-      <th>Do you celebrate Thanksgiving?</th>
-      <th>What is typically the main dish at your Thanksgiving dinner?</th>
-      <th>What is typically the main dish at your Thanksgiving dinner? - Other (please specify)</th>
-      <th>How is the main dish typically cooked?</th>
-      <th>How is the main dish typically cooked? - Other (please specify)</th>
-      <th>What kind of stuffing/dressing do you typically have?</th>
-      <th>What kind of stuffing/dressing do you typically have? - Other (please specify)</th>
-      <th>What type of cranberry saucedo you typically have?</th>
-      <th>What type of cranberry saucedo you typically have? - Other (please specify)</th>
-      <th>...</th>
-      <th>Have you ever tried to meet up with hometown friends on Thanksgiving night?</th>
-      <th>Have you ever attended a "Friendsgiving?"</th>
-      <th>Will you shop any Black Friday sales on Thanksgiving Day?</th>
-      <th>Do you work in retail?</th>
-      <th>Will you employer make you work on Black Friday?</th>
-      <th>How would you describe where you live?</th>
-      <th>Age</th>
-      <th>What is your gender?</th>
-      <th>How much total combined money did all members of your HOUSEHOLD earn last year?</th>
-      <th>US Region</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>4337954960</td>
-      <td>Yes</td>
-      <td>Turkey</td>
-      <td>NaN</td>
-      <td>Baked</td>
-      <td>NaN</td>
-      <td>Bread-based</td>
-      <td>NaN</td>
-      <td>None</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td>NaN</td>
-      <td>Suburban</td>
-      <td>18 - 29</td>
-      <td>Male</td>
-      <td>$75,000 to $99,999</td>
-      <td>Middle Atlantic</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>4337951949</td>
-      <td>Yes</td>
-      <td>Turkey</td>
-      <td>NaN</td>
-      <td>Baked</td>
-      <td>NaN</td>
-      <td>Bread-based</td>
-      <td>NaN</td>
-      <td>Other (please specify)</td>
-      <td>Homemade cranberry gelatin ring</td>
-      <td>...</td>
-      <td>No</td>
-      <td>No</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>NaN</td>
-      <td>Rural</td>
-      <td>18 - 29</td>
-      <td>Female</td>
-      <td>$50,000 to $74,999</td>
-      <td>East South Central</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>4337935621</td>
-      <td>Yes</td>
-      <td>Turkey</td>
-      <td>NaN</td>
-      <td>Roasted</td>
-      <td>NaN</td>
-      <td>Rice-based</td>
-      <td>NaN</td>
-      <td>Homemade</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>NaN</td>
-      <td>Suburban</td>
-      <td>18 - 29</td>
-      <td>Male</td>
-      <td>$0 to $9,999</td>
-      <td>Mountain</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4337933040</td>
-      <td>Yes</td>
-      <td>Turkey</td>
-      <td>NaN</td>
-      <td>Baked</td>
-      <td>NaN</td>
-      <td>Bread-based</td>
-      <td>NaN</td>
-      <td>Homemade</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td>NaN</td>
-      <td>Urban</td>
-      <td>30 - 44</td>
-      <td>Male</td>
-      <td>$200,000 and up</td>
-      <td>Pacific</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4337931983</td>
-      <td>Yes</td>
-      <td>Tofurkey</td>
-      <td>NaN</td>
-      <td>Baked</td>
-      <td>NaN</td>
-      <td>Bread-based</td>
-      <td>NaN</td>
-      <td>Canned</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td>NaN</td>
-      <td>Urban</td>
-      <td>30 - 44</td>
-      <td>Male</td>
-      <td>$100,000 to $124,999</td>
-      <td>Pacific</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 65 columns</p>
-</div>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -11954,8 +11808,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># display all the column names</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">awards</span>
 </pre></div>
 
 </div>
@@ -11966,98 +11819,902 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Index([&#39;RespondentID&#39;, &#39;Do you celebrate Thanksgiving?&#39;,
-       &#39;What is typically the main dish at your Thanksgiving dinner?&#39;,
-       &#39;What is typically the main dish at your Thanksgiving dinner? - Other (please specify)&#39;,
-       &#39;How is the main dish typically cooked?&#39;,
-       &#39;How is the main dish typically cooked? - Other (please specify)&#39;,
-       &#39;What kind of stuffing/dressing do you typically have?&#39;,
-       &#39;What kind of stuffing/dressing do you typically have? - Other (please specify)&#39;,
-       &#39;What type of cranberry saucedo you typically have?&#39;,
-       &#39;What type of cranberry saucedo you typically have? - Other (please specify)&#39;,
-       &#39;Do you typically have gravy?&#39;,
-       &#39;Which of these side dishes aretypically served at your Thanksgiving dinner? Please select all that apply. - Brussel sprouts&#39;,
-       &#39;Which of these side dishes aretypically served at your Thanksgiving dinner? Please select all that apply. - Carrots&#39;,
-       &#39;Which of these side dishes aretypically served at your Thanksgiving dinner? Please select all that apply. - Cauliflower&#39;,
-       &#39;Which of these side dishes aretypically served at your Thanksgiving dinner? Please select all that apply. - Corn&#39;,
-       &#39;Which of these side dishes aretypically served at your Thanksgiving dinner? Please select all that apply. - Cornbread&#39;,
-       &#39;Which of these side dishes aretypically served at your Thanksgiving dinner? Please select all that apply. - Fruit salad&#39;,
-       &#39;Which of these side dishes aretypically served at your Thanksgiving dinner? Please select all that apply. - Green beans/green bean casserole&#39;,
-       &#39;Which of these side dishes aretypically served at your Thanksgiving dinner? Please select all that apply. - Macaroni and cheese&#39;,
-       &#39;Which of these side dishes aretypically served at your Thanksgiving dinner? Please select all that apply. - Mashed potatoes&#39;,
-       &#39;Which of these side dishes aretypically served at your Thanksgiving dinner? Please select all that apply. - Rolls/biscuits&#39;,
-       &#39;Which of these side dishes aretypically served at your Thanksgiving dinner? Please select all that apply. - Squash&#39;,
-       &#39;Which of these side dishes aretypically served at your Thanksgiving dinner? Please select all that apply. - Vegetable salad&#39;,
-       &#39;Which of these side dishes aretypically served at your Thanksgiving dinner? Please select all that apply. - Yams/sweet potato casserole&#39;,
-       &#39;Which of these side dishes aretypically served at your Thanksgiving dinner? Please select all that apply. - Other (please specify)&#39;,
-       &#39;Which of these side dishes aretypically served at your Thanksgiving dinner? Please select all that apply. - Other (please specify).1&#39;,
-       &#39;Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply. - Apple&#39;,
-       &#39;Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply. - Buttermilk&#39;,
-       &#39;Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply. - Cherry&#39;,
-       &#39;Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply. - Chocolate&#39;,
-       &#39;Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply. - Coconut cream&#39;,
-       &#39;Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply. - Key lime&#39;,
-       &#39;Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply. - Peach&#39;,
-       &#39;Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply. - Pecan&#39;,
-       &#39;Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply. - Pumpkin&#39;,
-       &#39;Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply. - Sweet Potato&#39;,
-       &#39;Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply. - None&#39;,
-       &#39;Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply. - Other (please specify)&#39;,
-       &#39;Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply. - Other (please specify).1&#39;,
-       &#39;Which of these desserts do you typically have at Thanksgiving dinner? Please select all that apply.   - Apple cobbler&#39;,
-       &#39;Which of these desserts do you typically have at Thanksgiving dinner? Please select all that apply.   - Blondies&#39;,
-       &#39;Which of these desserts do you typically have at Thanksgiving dinner? Please select all that apply.   - Brownies&#39;,
-       &#39;Which of these desserts do you typically have at Thanksgiving dinner? Please select all that apply.   - Carrot cake&#39;,
-       &#39;Which of these desserts do you typically have at Thanksgiving dinner? Please select all that apply.   - Cheesecake&#39;,
-       &#39;Which of these desserts do you typically have at Thanksgiving dinner? Please select all that apply.   - Cookies&#39;,
-       &#39;Which of these desserts do you typically have at Thanksgiving dinner? Please select all that apply.   - Fudge&#39;,
-       &#39;Which of these desserts do you typically have at Thanksgiving dinner? Please select all that apply.   - Ice cream&#39;,
-       &#39;Which of these desserts do you typically have at Thanksgiving dinner? Please select all that apply.   - Peach cobbler&#39;,
-       &#39;Which of these desserts do you typically have at Thanksgiving dinner? Please select all that apply.   - None&#39;,
-       &#39;Which of these desserts do you typically have at Thanksgiving dinner? Please select all that apply.   - Other (please specify)&#39;,
-       &#39;Which of these desserts do you typically have at Thanksgiving dinner? Please select all that apply.   - Other (please specify).1&#39;,
-       &#39;Do you typically pray before or after the Thanksgiving meal?&#39;,
-       &#39;How far will you travel for Thanksgiving?&#39;,
-       &#39;Will you watch any of the following programs on Thanksgiving? Please select all that apply. - Macy&#39;s Parade&#39;,
-       &#39;What&#39;s the age cutoff at your &#34;kids&#39; table&#34; at Thanksgiving?&#39;,
-       &#39;Have you ever tried to meet up with hometown friends on Thanksgiving night?&#39;,
-       &#39;Have you ever attended a &#34;Friendsgiving?&#34;&#39;,
-       &#39;Will you shop any Black Friday sales on Thanksgiving Day?&#39;,
-       &#39;Do you work in retail?&#39;,
-       &#39;Will you employer make you work on Black Friday?&#39;,
-       &#39;How would you describe where you live?&#39;, &#39;Age&#39;, &#39;What is your gender?&#39;,
-       &#39;How much total combined money did all members of your HOUSEHOLD earn last year?&#39;,
-       &#39;US Region&#39;],
-      dtype=&#39;object&#39;)
-</pre>
+<div class="output_area">
+<div class="prompt output_prompt">Out[2]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Category</th>
+      <th>Nominee</th>
+      <th>Additional Info</th>
+      <th>Won?</th>
+      <th>Unnamed: 5</th>
+      <th>Unnamed: 6</th>
+      <th>Unnamed: 7</th>
+      <th>Unnamed: 8</th>
+      <th>Unnamed: 9</th>
+      <th>Unnamed: 10</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2010 (83rd)</td>
+      <td>Actor -- Leading Role</td>
+      <td>Javier Bardem</td>
+      <td>Biutiful {'Uxbal'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2010 (83rd)</td>
+      <td>Actor -- Leading Role</td>
+      <td>Jeff Bridges</td>
+      <td>True Grit {'Rooster Cogburn'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2010 (83rd)</td>
+      <td>Actor -- Leading Role</td>
+      <td>Jesse Eisenberg</td>
+      <td>The Social Network {'Mark Zuckerberg'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2010 (83rd)</td>
+      <td>Actor -- Leading Role</td>
+      <td>Colin Firth</td>
+      <td>The King's Speech {'King George VI'}</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2010 (83rd)</td>
+      <td>Actor -- Leading Role</td>
+      <td>James Franco</td>
+      <td>127 Hours {'Aron Ralston'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2010 (83rd)</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Christian Bale</td>
+      <td>The Fighter {'Dicky Eklund'}</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2010 (83rd)</td>
+      <td>Actor -- Supporting Role</td>
+      <td>John Hawkes</td>
+      <td>Winter's Bone {'Teardrop'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2010 (83rd)</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Jeremy Renner</td>
+      <td>The Town {'James Coughlin'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2010 (83rd)</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Mark Ruffalo</td>
+      <td>The Kids Are All Right {'Paul'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2010 (83rd)</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Geoffrey Rush</td>
+      <td>The King's Speech {'Lionel Logue'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2010 (83rd)</td>
+      <td>Actress -- Leading Role</td>
+      <td>Annette Bening</td>
+      <td>The Kids Are All Right {'Nic'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2010 (83rd)</td>
+      <td>Actress -- Leading Role</td>
+      <td>Nicole Kidman</td>
+      <td>Rabbit Hole {'Becca'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2010 (83rd)</td>
+      <td>Actress -- Leading Role</td>
+      <td>Jennifer Lawrence</td>
+      <td>Winter's Bone {'Ree'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2010 (83rd)</td>
+      <td>Actress -- Leading Role</td>
+      <td>Natalie Portman</td>
+      <td>Black Swan {'Nina Sayers/The Swan Queen'}</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2010 (83rd)</td>
+      <td>Actress -- Leading Role</td>
+      <td>Michelle Williams</td>
+      <td>Blue Valentine {'Cindy'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2010 (83rd)</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Amy Adams</td>
+      <td>The Fighter {'Charlene Fleming'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2010 (83rd)</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Helena Bonham Carter</td>
+      <td>The King's Speech {'Queen Elizabeth'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2010 (83rd)</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Melissa Leo</td>
+      <td>The Fighter {'Alice Ward'}</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2010 (83rd)</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Hailee Steinfeld</td>
+      <td>True Grit {'Mattie Ross'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2010 (83rd)</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Jacki Weaver</td>
+      <td>Animal Kingdom {'Janine 'Smurf' Cody'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>2010 (83rd)</td>
+      <td>Animated Feature Film</td>
+      <td>How to Train Your Dragon</td>
+      <td>Chris Sanders and Dean DeBlois</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>2010 (83rd)</td>
+      <td>Animated Feature Film</td>
+      <td>The Illusionist</td>
+      <td>Sylvain Chomet</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>2010 (83rd)</td>
+      <td>Animated Feature Film</td>
+      <td>Toy Story 3</td>
+      <td>Lee Unkrich</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>2010 (83rd)</td>
+      <td>Art Direction</td>
+      <td>Alice in Wonderland</td>
+      <td>Production Design: Robert Stromberg; Set Decor...</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>2010 (83rd)</td>
+      <td>Art Direction</td>
+      <td>Harry Potter and the Deathly Hallows Part 1</td>
+      <td>Production Design: Stuart Craig; Set Decoratio...</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>2010 (83rd)</td>
+      <td>Art Direction</td>
+      <td>Inception</td>
+      <td>Production Design: Guy Hendrix Dyas; Set Decor...</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>2010 (83rd)</td>
+      <td>Art Direction</td>
+      <td>The King's Speech</td>
+      <td>Production Design: Eve Stewart; Set Decoration...</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>2010 (83rd)</td>
+      <td>Art Direction</td>
+      <td>True Grit</td>
+      <td>Production Design: Jess Gonchor; Set Decoratio...</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>2010 (83rd)</td>
+      <td>Cinematography</td>
+      <td>Black Swan</td>
+      <td>Matthew Libatique</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>2010 (83rd)</td>
+      <td>Cinematography</td>
+      <td>Inception</td>
+      <td>Wally Pfister</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>10107</th>
+      <td>1927/28 (1st)</td>
+      <td>Art Direction</td>
+      <td>Harry Oliver</td>
+      <td>7th Heaven</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10108</th>
+      <td>1927/28 (1st)</td>
+      <td>Cinematography</td>
+      <td>George Barnes</td>
+      <td>The Devil Dancer; The Magic Flame; and Sadie T...</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10109</th>
+      <td>1927/28 (1st)</td>
+      <td>Cinematography</td>
+      <td>Charles Rosher</td>
+      <td>Sunrise</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10110</th>
+      <td>1927/28 (1st)</td>
+      <td>Cinematography</td>
+      <td>Karl Struss</td>
+      <td>Sunrise</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10111</th>
+      <td>1927/28 (1st)</td>
+      <td>Directing</td>
+      <td>Lewis Milestone</td>
+      <td>Two Arabian Knights</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10112</th>
+      <td>1927/28 (1st)</td>
+      <td>Directing</td>
+      <td>Ted Wilde</td>
+      <td>Speedy</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10113</th>
+      <td>1927/28 (1st)</td>
+      <td>Directing</td>
+      <td>Frank Borzage</td>
+      <td>7th Heaven</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10114</th>
+      <td>1927/28 (1st)</td>
+      <td>Directing</td>
+      <td>Herbert Brenon</td>
+      <td>Sorrell and Son</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10115</th>
+      <td>1927/28 (1st)</td>
+      <td>Directing</td>
+      <td>King Vidor</td>
+      <td>The Crowd</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10116</th>
+      <td>1927/28 (1st)</td>
+      <td>Directing</td>
+      <td>To Charles Chaplin, for acting, writing, direc...</td>
+      <td>NaN</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10117</th>
+      <td>1927/28 (1st)</td>
+      <td>Best Picture</td>
+      <td>The Caddo Company</td>
+      <td>The Racket</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10118</th>
+      <td>1927/28 (1st)</td>
+      <td>Best Picture</td>
+      <td>Fox</td>
+      <td>7th Heaven</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10119</th>
+      <td>1927/28 (1st)</td>
+      <td>Best Picture</td>
+      <td>Paramount Famous Lasky</td>
+      <td>Wings</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10120</th>
+      <td>1927/28 (1st)</td>
+      <td>Writing</td>
+      <td>Alfred Cohn</td>
+      <td>The Jazz Singer</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10121</th>
+      <td>1927/28 (1st)</td>
+      <td>Writing</td>
+      <td>Anthony Coldeway</td>
+      <td>Glorious Betsy</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10122</th>
+      <td>1927/28 (1st)</td>
+      <td>Writing</td>
+      <td>Benjamin Glazer</td>
+      <td>7th Heaven</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10123</th>
+      <td>1927/28 (1st)</td>
+      <td>Writing</td>
+      <td>Lajos Biro</td>
+      <td>The Last Command</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10124</th>
+      <td>1927/28 (1st)</td>
+      <td>Writing</td>
+      <td>Ben Hecht</td>
+      <td>Underworld</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10125</th>
+      <td>1927/28 (1st)</td>
+      <td>Writing</td>
+      <td>Gerald Duffy</td>
+      <td>The Private Life of Helen of Troy</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10126</th>
+      <td>1927/28 (1st)</td>
+      <td>Writing</td>
+      <td>Joseph Farnham[NOTE: This award was not associ...</td>
+      <td>NaN</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10127</th>
+      <td>1927/28 (1st)</td>
+      <td>Writing</td>
+      <td>George Marion, Jr.[NOTE: This nomination was n...</td>
+      <td>NaN</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10128</th>
+      <td>1927/28 (1st)</td>
+      <td>Writing</td>
+      <td>To Charles Chaplin, for acting, writing, direc...</td>
+      <td>NaN</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10129</th>
+      <td>1927/28 (1st)</td>
+      <td>Honorary Award</td>
+      <td>To Warner Bros., for producing The Jazz Singer...</td>
+      <td>NaN</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10130</th>
+      <td>1927/28 (1st)</td>
+      <td>Honorary Award</td>
+      <td>To Charles Chaplin, for acting, writing, direc...</td>
+      <td>NaN</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10131</th>
+      <td>1927/28 (1st)</td>
+      <td>Engineering Effects (archaic category)</td>
+      <td>Ralph Hammeras [NOTE: This nomination was not ...</td>
+      <td>NaN</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10132</th>
+      <td>1927/28 (1st)</td>
+      <td>Engineering Effects (archaic category)</td>
+      <td>Roy Pomeroy</td>
+      <td>Wings</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10133</th>
+      <td>1927/28 (1st)</td>
+      <td>Engineering Effects (archaic category)</td>
+      <td>Nugent Slaughter [NOTE: Though no specific tit...</td>
+      <td>NaN</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10134</th>
+      <td>1927/28 (1st)</td>
+      <td>Unique and Artistic Picture (archaic category)</td>
+      <td>Fox</td>
+      <td>Sunrise</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10135</th>
+      <td>1927/28 (1st)</td>
+      <td>Unique and Artistic Picture (archaic category)</td>
+      <td>Metro-Goldwyn-Mayer</td>
+      <td>The Crowd</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10136</th>
+      <td>1927/28 (1st)</td>
+      <td>Unique and Artistic Picture (archaic category)</td>
+      <td>Paramount Famous Lasky</td>
+      <td>Chang</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>10137 rows × 11 columns</p>
 </div>
+</div>
+
 </div>
 
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Remove-Rows-don't-Celebrate">Remove Rows don't Celebrate<a class="anchor-link" href="#Remove-Rows-don't-Celebrate">&#182;</a></h1>
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># display how many times each category occurs in the &quot;Do you celebrate Thanksgiving&quot; column</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Do you celebrate Thanksgiving?&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
-
-<span class="c1"># filter rows with answers other than &quot;Yes&quot;</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Do you celebrate Thanksgiving?&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Yes&quot;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">awards</span><span class="p">[</span><span class="s2">&quot;Unnamed: 6&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12068,35 +12725,32 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Yes    980
-No      78
-Name: Do you celebrate Thanksgiving?, dtype: int64
-</pre>
+<div class="output_area">
+<div class="prompt output_prompt">Out[3]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>*                                                                   9
+ flexibility and water resistance                                   1
+ sympathetic                                                        1
+ direct radiator bass style cinema loudspeaker systems. [Sound]&#34;    1
+Name: Unnamed: 6, dtype: int64</pre>
 </div>
+
 </div>
 
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Waht-Main-Dishes-People-Tend-to-Eat-During-Thaksgiving">Waht Main Dishes People Tend to Eat During Thaksgiving<a class="anchor-link" href="#Waht-Main-Dishes-People-Tend-to-Eat-During-Thaksgiving">&#182;</a></h1>
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># display counts of how many times each category occurs </span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;What is typically the main dish at your Thanksgiving dinner?&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">awards</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">awards</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span>
+<span class="n">awards</span>
 </pre></div>
 
 </div>
@@ -12107,19 +12761,890 @@ Name: Do you celebrate Thanksgiving?, dtype: int64
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Turkey                    859
-Other (please specify)     35
-Ham/Pork                   29
-Tofurkey                   20
-Chicken                    12
-Roast beef                 11
-I don&#39;t know                5
-Turducken                   3
-Name: What is typically the main dish at your Thanksgiving dinner?, dtype: int64
-</pre>
+<div class="output_area">
+<div class="prompt output_prompt">Out[4]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Category</th>
+      <th>Nominee</th>
+      <th>Additional Info</th>
+      <th>Won?</th>
+      <th>Unnamed: 5</th>
+      <th>Unnamed: 6</th>
+      <th>Unnamed: 7</th>
+      <th>Unnamed: 8</th>
+      <th>Unnamed: 9</th>
+      <th>Unnamed: 10</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2010</td>
+      <td>Actor -- Leading Role</td>
+      <td>Javier Bardem</td>
+      <td>Biutiful {'Uxbal'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2010</td>
+      <td>Actor -- Leading Role</td>
+      <td>Jeff Bridges</td>
+      <td>True Grit {'Rooster Cogburn'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2010</td>
+      <td>Actor -- Leading Role</td>
+      <td>Jesse Eisenberg</td>
+      <td>The Social Network {'Mark Zuckerberg'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2010</td>
+      <td>Actor -- Leading Role</td>
+      <td>Colin Firth</td>
+      <td>The King's Speech {'King George VI'}</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2010</td>
+      <td>Actor -- Leading Role</td>
+      <td>James Franco</td>
+      <td>127 Hours {'Aron Ralston'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2010</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Christian Bale</td>
+      <td>The Fighter {'Dicky Eklund'}</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2010</td>
+      <td>Actor -- Supporting Role</td>
+      <td>John Hawkes</td>
+      <td>Winter's Bone {'Teardrop'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2010</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Jeremy Renner</td>
+      <td>The Town {'James Coughlin'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2010</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Mark Ruffalo</td>
+      <td>The Kids Are All Right {'Paul'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2010</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Geoffrey Rush</td>
+      <td>The King's Speech {'Lionel Logue'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2010</td>
+      <td>Actress -- Leading Role</td>
+      <td>Annette Bening</td>
+      <td>The Kids Are All Right {'Nic'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2010</td>
+      <td>Actress -- Leading Role</td>
+      <td>Nicole Kidman</td>
+      <td>Rabbit Hole {'Becca'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2010</td>
+      <td>Actress -- Leading Role</td>
+      <td>Jennifer Lawrence</td>
+      <td>Winter's Bone {'Ree'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2010</td>
+      <td>Actress -- Leading Role</td>
+      <td>Natalie Portman</td>
+      <td>Black Swan {'Nina Sayers/The Swan Queen'}</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2010</td>
+      <td>Actress -- Leading Role</td>
+      <td>Michelle Williams</td>
+      <td>Blue Valentine {'Cindy'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2010</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Amy Adams</td>
+      <td>The Fighter {'Charlene Fleming'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2010</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Helena Bonham Carter</td>
+      <td>The King's Speech {'Queen Elizabeth'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2010</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Melissa Leo</td>
+      <td>The Fighter {'Alice Ward'}</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2010</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Hailee Steinfeld</td>
+      <td>True Grit {'Mattie Ross'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2010</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Jacki Weaver</td>
+      <td>Animal Kingdom {'Janine 'Smurf' Cody'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>2010</td>
+      <td>Animated Feature Film</td>
+      <td>How to Train Your Dragon</td>
+      <td>Chris Sanders and Dean DeBlois</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>2010</td>
+      <td>Animated Feature Film</td>
+      <td>The Illusionist</td>
+      <td>Sylvain Chomet</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>2010</td>
+      <td>Animated Feature Film</td>
+      <td>Toy Story 3</td>
+      <td>Lee Unkrich</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>2010</td>
+      <td>Art Direction</td>
+      <td>Alice in Wonderland</td>
+      <td>Production Design: Robert Stromberg; Set Decor...</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>2010</td>
+      <td>Art Direction</td>
+      <td>Harry Potter and the Deathly Hallows Part 1</td>
+      <td>Production Design: Stuart Craig; Set Decoratio...</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>2010</td>
+      <td>Art Direction</td>
+      <td>Inception</td>
+      <td>Production Design: Guy Hendrix Dyas; Set Decor...</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>2010</td>
+      <td>Art Direction</td>
+      <td>The King's Speech</td>
+      <td>Production Design: Eve Stewart; Set Decoration...</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>2010</td>
+      <td>Art Direction</td>
+      <td>True Grit</td>
+      <td>Production Design: Jess Gonchor; Set Decoratio...</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>2010</td>
+      <td>Cinematography</td>
+      <td>Black Swan</td>
+      <td>Matthew Libatique</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>2010</td>
+      <td>Cinematography</td>
+      <td>Inception</td>
+      <td>Wally Pfister</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>10107</th>
+      <td>1927</td>
+      <td>Art Direction</td>
+      <td>Harry Oliver</td>
+      <td>7th Heaven</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10108</th>
+      <td>1927</td>
+      <td>Cinematography</td>
+      <td>George Barnes</td>
+      <td>The Devil Dancer; The Magic Flame; and Sadie T...</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10109</th>
+      <td>1927</td>
+      <td>Cinematography</td>
+      <td>Charles Rosher</td>
+      <td>Sunrise</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10110</th>
+      <td>1927</td>
+      <td>Cinematography</td>
+      <td>Karl Struss</td>
+      <td>Sunrise</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10111</th>
+      <td>1927</td>
+      <td>Directing</td>
+      <td>Lewis Milestone</td>
+      <td>Two Arabian Knights</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10112</th>
+      <td>1927</td>
+      <td>Directing</td>
+      <td>Ted Wilde</td>
+      <td>Speedy</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10113</th>
+      <td>1927</td>
+      <td>Directing</td>
+      <td>Frank Borzage</td>
+      <td>7th Heaven</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10114</th>
+      <td>1927</td>
+      <td>Directing</td>
+      <td>Herbert Brenon</td>
+      <td>Sorrell and Son</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10115</th>
+      <td>1927</td>
+      <td>Directing</td>
+      <td>King Vidor</td>
+      <td>The Crowd</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10116</th>
+      <td>1927</td>
+      <td>Directing</td>
+      <td>To Charles Chaplin, for acting, writing, direc...</td>
+      <td>NaN</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10117</th>
+      <td>1927</td>
+      <td>Best Picture</td>
+      <td>The Caddo Company</td>
+      <td>The Racket</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10118</th>
+      <td>1927</td>
+      <td>Best Picture</td>
+      <td>Fox</td>
+      <td>7th Heaven</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10119</th>
+      <td>1927</td>
+      <td>Best Picture</td>
+      <td>Paramount Famous Lasky</td>
+      <td>Wings</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10120</th>
+      <td>1927</td>
+      <td>Writing</td>
+      <td>Alfred Cohn</td>
+      <td>The Jazz Singer</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10121</th>
+      <td>1927</td>
+      <td>Writing</td>
+      <td>Anthony Coldeway</td>
+      <td>Glorious Betsy</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10122</th>
+      <td>1927</td>
+      <td>Writing</td>
+      <td>Benjamin Glazer</td>
+      <td>7th Heaven</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10123</th>
+      <td>1927</td>
+      <td>Writing</td>
+      <td>Lajos Biro</td>
+      <td>The Last Command</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10124</th>
+      <td>1927</td>
+      <td>Writing</td>
+      <td>Ben Hecht</td>
+      <td>Underworld</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10125</th>
+      <td>1927</td>
+      <td>Writing</td>
+      <td>Gerald Duffy</td>
+      <td>The Private Life of Helen of Troy</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10126</th>
+      <td>1927</td>
+      <td>Writing</td>
+      <td>Joseph Farnham[NOTE: This award was not associ...</td>
+      <td>NaN</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10127</th>
+      <td>1927</td>
+      <td>Writing</td>
+      <td>George Marion, Jr.[NOTE: This nomination was n...</td>
+      <td>NaN</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10128</th>
+      <td>1927</td>
+      <td>Writing</td>
+      <td>To Charles Chaplin, for acting, writing, direc...</td>
+      <td>NaN</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10129</th>
+      <td>1927</td>
+      <td>Honorary Award</td>
+      <td>To Warner Bros., for producing The Jazz Singer...</td>
+      <td>NaN</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10130</th>
+      <td>1927</td>
+      <td>Honorary Award</td>
+      <td>To Charles Chaplin, for acting, writing, direc...</td>
+      <td>NaN</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10131</th>
+      <td>1927</td>
+      <td>Engineering Effects (archaic category)</td>
+      <td>Ralph Hammeras [NOTE: This nomination was not ...</td>
+      <td>NaN</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10132</th>
+      <td>1927</td>
+      <td>Engineering Effects (archaic category)</td>
+      <td>Roy Pomeroy</td>
+      <td>Wings</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10133</th>
+      <td>1927</td>
+      <td>Engineering Effects (archaic category)</td>
+      <td>Nugent Slaughter [NOTE: Though no specific tit...</td>
+      <td>NaN</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10134</th>
+      <td>1927</td>
+      <td>Unique and Artistic Picture (archaic category)</td>
+      <td>Fox</td>
+      <td>Sunrise</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10135</th>
+      <td>1927</td>
+      <td>Unique and Artistic Picture (archaic category)</td>
+      <td>Metro-Goldwyn-Mayer</td>
+      <td>The Crowd</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10136</th>
+      <td>1927</td>
+      <td>Unique and Artistic Picture (archaic category)</td>
+      <td>Paramount Famous Lasky</td>
+      <td>Chang</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>10137 rows × 11 columns</p>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -12131,8 +13656,10 @@ Name: What is typically the main dish at your Thanksgiving dinner?, dtype: int64
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Display the Do you typically have gravy? column for any rows from data where the What is typically the main dish at your Thanksgiving dinner? column equals Tofurkey.</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;What is typically the main dish at your Thanksgiving dinner?&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Tofurkey&quot;</span><span class="p">][</span><span class="s2">&quot;Do you typically have gravy?&quot;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">later_than_2000</span> <span class="o">=</span> <span class="n">awards</span><span class="p">[</span><span class="n">awards</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">2000</span><span class="p">]</span>
+<span class="n">award_categories</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Actor -- Leading Role&quot;</span><span class="p">,</span><span class="s2">&quot;Actor -- Supporting Role&quot;</span><span class="p">,</span><span class="s2">&quot;Actress -- Leading Role&quot;</span><span class="p">,</span><span class="s2">&quot;Actress -- Supporting Role&quot;</span><span class="p">]</span>
+<span class="n">nominations</span> <span class="o">=</span> <span class="n">later_than_2000</span><span class="p">[</span><span class="n">later_than_2000</span><span class="p">[</span><span class="s2">&quot;Category&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">award_categories</span><span class="p">)]</span>
+<span class="n">nominations</span>
 </pre></div>
 
 </div>
@@ -12143,63 +13670,904 @@ Name: What is typically the main dish at your Thanksgiving dinner?, dtype: int64
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>4      Yes
-33     Yes
-69      No
-72      No
-77     Yes
-145    Yes
-175    Yes
-218     No
-243    Yes
-275     No
-393    Yes
-399    Yes
-571    Yes
-594    Yes
-628     No
-774     No
-820     No
-837    Yes
-860     No
-953    Yes
-Name: Do you typically have gravy?, dtype: object
-</pre>
+<div class="output_area">
+<div class="prompt output_prompt">Out[5]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Category</th>
+      <th>Nominee</th>
+      <th>Additional Info</th>
+      <th>Won?</th>
+      <th>Unnamed: 5</th>
+      <th>Unnamed: 6</th>
+      <th>Unnamed: 7</th>
+      <th>Unnamed: 8</th>
+      <th>Unnamed: 9</th>
+      <th>Unnamed: 10</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2010</td>
+      <td>Actor -- Leading Role</td>
+      <td>Javier Bardem</td>
+      <td>Biutiful {'Uxbal'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2010</td>
+      <td>Actor -- Leading Role</td>
+      <td>Jeff Bridges</td>
+      <td>True Grit {'Rooster Cogburn'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2010</td>
+      <td>Actor -- Leading Role</td>
+      <td>Jesse Eisenberg</td>
+      <td>The Social Network {'Mark Zuckerberg'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2010</td>
+      <td>Actor -- Leading Role</td>
+      <td>Colin Firth</td>
+      <td>The King's Speech {'King George VI'}</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2010</td>
+      <td>Actor -- Leading Role</td>
+      <td>James Franco</td>
+      <td>127 Hours {'Aron Ralston'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2010</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Christian Bale</td>
+      <td>The Fighter {'Dicky Eklund'}</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2010</td>
+      <td>Actor -- Supporting Role</td>
+      <td>John Hawkes</td>
+      <td>Winter's Bone {'Teardrop'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2010</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Jeremy Renner</td>
+      <td>The Town {'James Coughlin'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2010</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Mark Ruffalo</td>
+      <td>The Kids Are All Right {'Paul'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2010</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Geoffrey Rush</td>
+      <td>The King's Speech {'Lionel Logue'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2010</td>
+      <td>Actress -- Leading Role</td>
+      <td>Annette Bening</td>
+      <td>The Kids Are All Right {'Nic'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2010</td>
+      <td>Actress -- Leading Role</td>
+      <td>Nicole Kidman</td>
+      <td>Rabbit Hole {'Becca'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2010</td>
+      <td>Actress -- Leading Role</td>
+      <td>Jennifer Lawrence</td>
+      <td>Winter's Bone {'Ree'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2010</td>
+      <td>Actress -- Leading Role</td>
+      <td>Natalie Portman</td>
+      <td>Black Swan {'Nina Sayers/The Swan Queen'}</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2010</td>
+      <td>Actress -- Leading Role</td>
+      <td>Michelle Williams</td>
+      <td>Blue Valentine {'Cindy'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2010</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Amy Adams</td>
+      <td>The Fighter {'Charlene Fleming'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2010</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Helena Bonham Carter</td>
+      <td>The King's Speech {'Queen Elizabeth'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2010</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Melissa Leo</td>
+      <td>The Fighter {'Alice Ward'}</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2010</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Hailee Steinfeld</td>
+      <td>True Grit {'Mattie Ross'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2010</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Jacki Weaver</td>
+      <td>Animal Kingdom {'Janine 'Smurf' Cody'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>2009</td>
+      <td>Actor -- Leading Role</td>
+      <td>Jeff Bridges</td>
+      <td>Crazy Heart {'Bad Blake'}</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>2009</td>
+      <td>Actor -- Leading Role</td>
+      <td>George Clooney</td>
+      <td>Up in the Air {'Ryan Bingham'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>137</th>
+      <td>2009</td>
+      <td>Actor -- Leading Role</td>
+      <td>Colin Firth</td>
+      <td>A Single Man {'George'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>138</th>
+      <td>2009</td>
+      <td>Actor -- Leading Role</td>
+      <td>Morgan Freeman</td>
+      <td>Invictus {'Nelson Mandela'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>2009</td>
+      <td>Actor -- Leading Role</td>
+      <td>Jeremy Renner</td>
+      <td>The Hurt Locker {'Staff Sergeant William James'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>2009</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Matt Damon</td>
+      <td>Invictus {'Francois Pienaar'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>141</th>
+      <td>2009</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Woody Harrelson</td>
+      <td>The Messenger {'Captain Tony Stone'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>142</th>
+      <td>2009</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Christopher Plummer</td>
+      <td>The Last Station {'Tolstoy'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>2009</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Stanley Tucci</td>
+      <td>The Lovely Bones {'George Harvey'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>144</th>
+      <td>2009</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Christoph Waltz</td>
+      <td>Inglourious Basterds {'Col. Hans Landa'}</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1040</th>
+      <td>2002</td>
+      <td>Actress -- Leading Role</td>
+      <td>Salma Hayek</td>
+      <td>Frida {'Frida Kahlo'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1041</th>
+      <td>2002</td>
+      <td>Actress -- Leading Role</td>
+      <td>Nicole Kidman</td>
+      <td>The Hours {'Virginia Woolf'}</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1042</th>
+      <td>2002</td>
+      <td>Actress -- Leading Role</td>
+      <td>Diane Lane</td>
+      <td>Unfaithful {'Connie Sumner'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1043</th>
+      <td>2002</td>
+      <td>Actress -- Leading Role</td>
+      <td>Julianne Moore</td>
+      <td>Far from Heaven {'Cathy Whitaker'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1044</th>
+      <td>2002</td>
+      <td>Actress -- Leading Role</td>
+      <td>Renée Zellweger</td>
+      <td>Chicago {'Roxie Hart'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1045</th>
+      <td>2002</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Kathy Bates</td>
+      <td>About Schmidt {'Roberta Hertzel'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1046</th>
+      <td>2002</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Julianne Moore</td>
+      <td>The Hours {'Laura Brown'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1047</th>
+      <td>2002</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Queen Latifah</td>
+      <td>Chicago {'Matron Mama Morton'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1048</th>
+      <td>2002</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Meryl Streep</td>
+      <td>Adaptation {'Susan Orlean'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1049</th>
+      <td>2002</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Catherine Zeta-Jones</td>
+      <td>Chicago {'Velma Kelly'}</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1157</th>
+      <td>2001</td>
+      <td>Actor -- Leading Role</td>
+      <td>Russell Crowe</td>
+      <td>A Beautiful Mind {'John Nash'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1158</th>
+      <td>2001</td>
+      <td>Actor -- Leading Role</td>
+      <td>Sean Penn</td>
+      <td>I Am Sam {'Sam Dawson'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1159</th>
+      <td>2001</td>
+      <td>Actor -- Leading Role</td>
+      <td>Will Smith</td>
+      <td>Ali {'Muhammad Ali'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1160</th>
+      <td>2001</td>
+      <td>Actor -- Leading Role</td>
+      <td>Denzel Washington</td>
+      <td>Training Day {'Alonzo'}</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1161</th>
+      <td>2001</td>
+      <td>Actor -- Leading Role</td>
+      <td>Tom Wilkinson</td>
+      <td>In the Bedroom {'Matt Fowler'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1162</th>
+      <td>2001</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Jim Broadbent</td>
+      <td>Iris {'John Bayley'}</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1163</th>
+      <td>2001</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Ethan Hawke</td>
+      <td>Training Day {'Jake'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1164</th>
+      <td>2001</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Ben Kingsley</td>
+      <td>Sexy Beast {'Don Logan'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1165</th>
+      <td>2001</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Ian McKellen</td>
+      <td>The Lord of the Rings: The Fellowship of the R...</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1166</th>
+      <td>2001</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Jon Voight</td>
+      <td>Ali {'Howard Cosell'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1167</th>
+      <td>2001</td>
+      <td>Actress -- Leading Role</td>
+      <td>Halle Berry</td>
+      <td>Monster's Ball {'Leticia Musgrove'}</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1168</th>
+      <td>2001</td>
+      <td>Actress -- Leading Role</td>
+      <td>Judi Dench</td>
+      <td>Iris {'Iris Murdoch'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1169</th>
+      <td>2001</td>
+      <td>Actress -- Leading Role</td>
+      <td>Nicole Kidman</td>
+      <td>Moulin Rouge {'Satine'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1170</th>
+      <td>2001</td>
+      <td>Actress -- Leading Role</td>
+      <td>Sissy Spacek</td>
+      <td>In the Bedroom {'Ruth Fowler'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1171</th>
+      <td>2001</td>
+      <td>Actress -- Leading Role</td>
+      <td>Renée Zellweger</td>
+      <td>Bridget Jones's Diary {'Bridget Jones'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1172</th>
+      <td>2001</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Jennifer Connelly</td>
+      <td>A Beautiful Mind {'Alicia Nash'}</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1173</th>
+      <td>2001</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Helen Mirren</td>
+      <td>Gosford Park {'Mrs. Wilson'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1174</th>
+      <td>2001</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Maggie Smith</td>
+      <td>Gosford Park {'Constance, Countess of Trentham'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1175</th>
+      <td>2001</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Marisa Tomei</td>
+      <td>In the Bedroom {'Natalie Strout'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1176</th>
+      <td>2001</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Kate Winslet</td>
+      <td>Iris {'Young Iris Murdoch'}</td>
+      <td>NO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>200 rows × 11 columns</p>
 </div>
+</div>
+
 </div>
 
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="What-Pies-People-Eat">What Pies People Eat<a class="anchor-link" href="#What-Pies-People-Eat">&#182;</a></h1>
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># people who don&#39;t eat apple pie</span>
-<span class="n">apple_isnull</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply. - Apple&quot;</span><span class="p">])</span>
-
-<span class="c1"># people who don&#39;t eat Pumpkin pie</span>
-<span class="n">pumpkin_isnull</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply. - Pumpkin&quot;</span><span class="p">])</span>
-
-<span class="c1"># people who don&#39;t eat Pecan pie</span>
-<span class="n">pecan_isnull</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply. - Pecan&quot;</span><span class="p">])</span>
-
-<span class="c1"># Join all three Series and we get how many people don&#39;t eat pies</span>
-<span class="n">ate_pies</span> <span class="o">=</span> <span class="n">apple_isnull</span> <span class="o">&amp;</span> <span class="n">pumpkin_isnull</span> <span class="o">&amp;</span> <span class="n">pecan_isnull</span>
-<span class="n">ate_pies</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nominations</span><span class="p">[</span><span class="s1">&#39;Won&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nominations</span><span class="p">[</span><span class="s2">&quot;Won?&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;YES&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;NO&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
+<span class="n">final_nominations</span> <span class="o">=</span> <span class="n">nominations</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;Won?&quot;</span><span class="p">,</span><span class="s2">&quot;Unnamed: 5&quot;</span><span class="p">,</span><span class="s2">&quot;Unnamed: 6&quot;</span><span class="p">,</span><span class="s2">&quot;Unnamed: 7&quot;</span><span class="p">,</span><span class="s2">&quot;Unnamed: 8&quot;</span><span class="p">,</span><span class="s2">&quot;Unnamed: 9&quot;</span><span class="p">,</span><span class="s2">&quot;Unnamed: 10&quot;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">final_nominations</span>
 </pre></div>
 
 </div>
@@ -12210,50 +14578,540 @@ Name: Do you typically have gravy?, dtype: object
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>False    876
-True     104
-dtype: int64</pre>
-</div>
+<div class="output_area">
+<div class="prompt"></div>
 
 </div>
 
+<div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Category</th>
+      <th>Nominee</th>
+      <th>Additional Info</th>
+      <th>Won</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2010</td>
+      <td>Actor -- Leading Role</td>
+      <td>Javier Bardem</td>
+      <td>Biutiful {'Uxbal'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2010</td>
+      <td>Actor -- Leading Role</td>
+      <td>Jeff Bridges</td>
+      <td>True Grit {'Rooster Cogburn'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2010</td>
+      <td>Actor -- Leading Role</td>
+      <td>Jesse Eisenberg</td>
+      <td>The Social Network {'Mark Zuckerberg'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2010</td>
+      <td>Actor -- Leading Role</td>
+      <td>Colin Firth</td>
+      <td>The King's Speech {'King George VI'}</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2010</td>
+      <td>Actor -- Leading Role</td>
+      <td>James Franco</td>
+      <td>127 Hours {'Aron Ralston'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2010</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Christian Bale</td>
+      <td>The Fighter {'Dicky Eklund'}</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2010</td>
+      <td>Actor -- Supporting Role</td>
+      <td>John Hawkes</td>
+      <td>Winter's Bone {'Teardrop'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2010</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Jeremy Renner</td>
+      <td>The Town {'James Coughlin'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2010</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Mark Ruffalo</td>
+      <td>The Kids Are All Right {'Paul'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2010</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Geoffrey Rush</td>
+      <td>The King's Speech {'Lionel Logue'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2010</td>
+      <td>Actress -- Leading Role</td>
+      <td>Annette Bening</td>
+      <td>The Kids Are All Right {'Nic'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2010</td>
+      <td>Actress -- Leading Role</td>
+      <td>Nicole Kidman</td>
+      <td>Rabbit Hole {'Becca'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2010</td>
+      <td>Actress -- Leading Role</td>
+      <td>Jennifer Lawrence</td>
+      <td>Winter's Bone {'Ree'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2010</td>
+      <td>Actress -- Leading Role</td>
+      <td>Natalie Portman</td>
+      <td>Black Swan {'Nina Sayers/The Swan Queen'}</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2010</td>
+      <td>Actress -- Leading Role</td>
+      <td>Michelle Williams</td>
+      <td>Blue Valentine {'Cindy'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2010</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Amy Adams</td>
+      <td>The Fighter {'Charlene Fleming'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2010</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Helena Bonham Carter</td>
+      <td>The King's Speech {'Queen Elizabeth'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2010</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Melissa Leo</td>
+      <td>The Fighter {'Alice Ward'}</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2010</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Hailee Steinfeld</td>
+      <td>True Grit {'Mattie Ross'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2010</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Jacki Weaver</td>
+      <td>Animal Kingdom {'Janine 'Smurf' Cody'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>2009</td>
+      <td>Actor -- Leading Role</td>
+      <td>Jeff Bridges</td>
+      <td>Crazy Heart {'Bad Blake'}</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>2009</td>
+      <td>Actor -- Leading Role</td>
+      <td>George Clooney</td>
+      <td>Up in the Air {'Ryan Bingham'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>137</th>
+      <td>2009</td>
+      <td>Actor -- Leading Role</td>
+      <td>Colin Firth</td>
+      <td>A Single Man {'George'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>138</th>
+      <td>2009</td>
+      <td>Actor -- Leading Role</td>
+      <td>Morgan Freeman</td>
+      <td>Invictus {'Nelson Mandela'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>2009</td>
+      <td>Actor -- Leading Role</td>
+      <td>Jeremy Renner</td>
+      <td>The Hurt Locker {'Staff Sergeant William James'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>2009</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Matt Damon</td>
+      <td>Invictus {'Francois Pienaar'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>141</th>
+      <td>2009</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Woody Harrelson</td>
+      <td>The Messenger {'Captain Tony Stone'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>142</th>
+      <td>2009</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Christopher Plummer</td>
+      <td>The Last Station {'Tolstoy'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>2009</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Stanley Tucci</td>
+      <td>The Lovely Bones {'George Harvey'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>144</th>
+      <td>2009</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Christoph Waltz</td>
+      <td>Inglourious Basterds {'Col. Hans Landa'}</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1040</th>
+      <td>2002</td>
+      <td>Actress -- Leading Role</td>
+      <td>Salma Hayek</td>
+      <td>Frida {'Frida Kahlo'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1041</th>
+      <td>2002</td>
+      <td>Actress -- Leading Role</td>
+      <td>Nicole Kidman</td>
+      <td>The Hours {'Virginia Woolf'}</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1042</th>
+      <td>2002</td>
+      <td>Actress -- Leading Role</td>
+      <td>Diane Lane</td>
+      <td>Unfaithful {'Connie Sumner'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1043</th>
+      <td>2002</td>
+      <td>Actress -- Leading Role</td>
+      <td>Julianne Moore</td>
+      <td>Far from Heaven {'Cathy Whitaker'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1044</th>
+      <td>2002</td>
+      <td>Actress -- Leading Role</td>
+      <td>Renée Zellweger</td>
+      <td>Chicago {'Roxie Hart'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1045</th>
+      <td>2002</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Kathy Bates</td>
+      <td>About Schmidt {'Roberta Hertzel'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1046</th>
+      <td>2002</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Julianne Moore</td>
+      <td>The Hours {'Laura Brown'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1047</th>
+      <td>2002</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Queen Latifah</td>
+      <td>Chicago {'Matron Mama Morton'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1048</th>
+      <td>2002</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Meryl Streep</td>
+      <td>Adaptation {'Susan Orlean'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1049</th>
+      <td>2002</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Catherine Zeta-Jones</td>
+      <td>Chicago {'Velma Kelly'}</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1157</th>
+      <td>2001</td>
+      <td>Actor -- Leading Role</td>
+      <td>Russell Crowe</td>
+      <td>A Beautiful Mind {'John Nash'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1158</th>
+      <td>2001</td>
+      <td>Actor -- Leading Role</td>
+      <td>Sean Penn</td>
+      <td>I Am Sam {'Sam Dawson'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1159</th>
+      <td>2001</td>
+      <td>Actor -- Leading Role</td>
+      <td>Will Smith</td>
+      <td>Ali {'Muhammad Ali'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1160</th>
+      <td>2001</td>
+      <td>Actor -- Leading Role</td>
+      <td>Denzel Washington</td>
+      <td>Training Day {'Alonzo'}</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1161</th>
+      <td>2001</td>
+      <td>Actor -- Leading Role</td>
+      <td>Tom Wilkinson</td>
+      <td>In the Bedroom {'Matt Fowler'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1162</th>
+      <td>2001</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Jim Broadbent</td>
+      <td>Iris {'John Bayley'}</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1163</th>
+      <td>2001</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Ethan Hawke</td>
+      <td>Training Day {'Jake'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1164</th>
+      <td>2001</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Ben Kingsley</td>
+      <td>Sexy Beast {'Don Logan'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1165</th>
+      <td>2001</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Ian McKellen</td>
+      <td>The Lord of the Rings: The Fellowship of the R...</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1166</th>
+      <td>2001</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Jon Voight</td>
+      <td>Ali {'Howard Cosell'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1167</th>
+      <td>2001</td>
+      <td>Actress -- Leading Role</td>
+      <td>Halle Berry</td>
+      <td>Monster's Ball {'Leticia Musgrove'}</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1168</th>
+      <td>2001</td>
+      <td>Actress -- Leading Role</td>
+      <td>Judi Dench</td>
+      <td>Iris {'Iris Murdoch'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1169</th>
+      <td>2001</td>
+      <td>Actress -- Leading Role</td>
+      <td>Nicole Kidman</td>
+      <td>Moulin Rouge {'Satine'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1170</th>
+      <td>2001</td>
+      <td>Actress -- Leading Role</td>
+      <td>Sissy Spacek</td>
+      <td>In the Bedroom {'Ruth Fowler'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1171</th>
+      <td>2001</td>
+      <td>Actress -- Leading Role</td>
+      <td>Renée Zellweger</td>
+      <td>Bridget Jones's Diary {'Bridget Jones'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1172</th>
+      <td>2001</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Jennifer Connelly</td>
+      <td>A Beautiful Mind {'Alicia Nash'}</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1173</th>
+      <td>2001</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Helen Mirren</td>
+      <td>Gosford Park {'Mrs. Wilson'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1174</th>
+      <td>2001</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Maggie Smith</td>
+      <td>Gosford Park {'Constance, Countess of Trentham'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1175</th>
+      <td>2001</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Marisa Tomei</td>
+      <td>In the Bedroom {'Natalie Strout'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1176</th>
+      <td>2001</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Kate Winslet</td>
+      <td>Iris {'Young Iris Murdoch'}</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>200 rows × 5 columns</p>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Convert-Age-to-Numeric">Convert Age to Numeric<a class="anchor-link" href="#Convert-Age-to-Numeric">&#182;</a></h1>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># function converting age to numeric</span>
-<span class="k">def</span> <span class="nf">convertAge</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">:</span>
-    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-        <span class="k">return</span> <span class="kc">None</span>
-    
-    <span class="n">split_x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">split_x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;60+&quot;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">60</span>
-    
-    <span class="k">return</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">split_x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">split_x</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span> <span class="o">/</span> <span class="mi">2</span>
-
-<span class="c1"># apply to each value in Age column</span>
-<span class="n">data</span><span class="p">[</span><span class="s2">&quot;int_age&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">convertAge</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-
-<span class="n">data</span><span class="p">[</span><span class="s2">&quot;int_age&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">final_nominations</span><span class="p">[</span><span class="s2">&quot;Additional Info&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;&#39;}&quot;</span><span class="p">)</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">a1</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;{&#39;&quot;</span><span class="p">)</span>
+<span class="n">final_nominations</span><span class="p">[</span><span class="s2">&quot;Movie&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a2</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">final_nominations</span><span class="p">[</span><span class="s2">&quot;Character&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a2</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">final_nominations</span> <span class="o">=</span> <span class="n">final_nominations</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Additional Info&quot;</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">final_nominations</span>
 </pre></div>
 
 </div>
@@ -12264,22 +15122,578 @@ dtype: int64</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
-</div>
-
-<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[7]:</div>
 
 
-<div class="output_text output_subarea output_execute_result">
-<pre>count    947.000000
-mean      44.889652
-std       13.475203
-min       23.500000
-25%             NaN
-50%             NaN
-75%             NaN
-max       60.000000
-Name: int_age, dtype: float64</pre>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Category</th>
+      <th>Nominee</th>
+      <th>Won</th>
+      <th>Movie</th>
+      <th>Character</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2010</td>
+      <td>Actor -- Leading Role</td>
+      <td>Javier Bardem</td>
+      <td>0</td>
+      <td>Biutiful</td>
+      <td>Uxbal</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2010</td>
+      <td>Actor -- Leading Role</td>
+      <td>Jeff Bridges</td>
+      <td>0</td>
+      <td>True Grit</td>
+      <td>Rooster Cogburn</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2010</td>
+      <td>Actor -- Leading Role</td>
+      <td>Jesse Eisenberg</td>
+      <td>0</td>
+      <td>The Social Network</td>
+      <td>Mark Zuckerberg</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2010</td>
+      <td>Actor -- Leading Role</td>
+      <td>Colin Firth</td>
+      <td>1</td>
+      <td>The King's Speech</td>
+      <td>King George VI</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2010</td>
+      <td>Actor -- Leading Role</td>
+      <td>James Franco</td>
+      <td>0</td>
+      <td>127 Hours</td>
+      <td>Aron Ralston</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2010</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Christian Bale</td>
+      <td>1</td>
+      <td>The Fighter</td>
+      <td>Dicky Eklund</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2010</td>
+      <td>Actor -- Supporting Role</td>
+      <td>John Hawkes</td>
+      <td>0</td>
+      <td>Winter's Bone</td>
+      <td>Teardrop</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2010</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Jeremy Renner</td>
+      <td>0</td>
+      <td>The Town</td>
+      <td>James Coughlin</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2010</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Mark Ruffalo</td>
+      <td>0</td>
+      <td>The Kids Are All Right</td>
+      <td>Paul</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2010</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Geoffrey Rush</td>
+      <td>0</td>
+      <td>The King's Speech</td>
+      <td>Lionel Logue</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2010</td>
+      <td>Actress -- Leading Role</td>
+      <td>Annette Bening</td>
+      <td>0</td>
+      <td>The Kids Are All Right</td>
+      <td>Nic</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2010</td>
+      <td>Actress -- Leading Role</td>
+      <td>Nicole Kidman</td>
+      <td>0</td>
+      <td>Rabbit Hole</td>
+      <td>Becca</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2010</td>
+      <td>Actress -- Leading Role</td>
+      <td>Jennifer Lawrence</td>
+      <td>0</td>
+      <td>Winter's Bone</td>
+      <td>Ree</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2010</td>
+      <td>Actress -- Leading Role</td>
+      <td>Natalie Portman</td>
+      <td>1</td>
+      <td>Black Swan</td>
+      <td>Nina Sayers/The Swan Queen</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2010</td>
+      <td>Actress -- Leading Role</td>
+      <td>Michelle Williams</td>
+      <td>0</td>
+      <td>Blue Valentine</td>
+      <td>Cindy</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2010</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Amy Adams</td>
+      <td>0</td>
+      <td>The Fighter</td>
+      <td>Charlene Fleming</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2010</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Helena Bonham Carter</td>
+      <td>0</td>
+      <td>The King's Speech</td>
+      <td>Queen Elizabeth</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2010</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Melissa Leo</td>
+      <td>1</td>
+      <td>The Fighter</td>
+      <td>Alice Ward</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2010</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Hailee Steinfeld</td>
+      <td>0</td>
+      <td>True Grit</td>
+      <td>Mattie Ross</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2010</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Jacki Weaver</td>
+      <td>0</td>
+      <td>Animal Kingdom</td>
+      <td>Janine 'Smurf' Cody</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>2009</td>
+      <td>Actor -- Leading Role</td>
+      <td>Jeff Bridges</td>
+      <td>1</td>
+      <td>Crazy Heart</td>
+      <td>Bad Blake</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>2009</td>
+      <td>Actor -- Leading Role</td>
+      <td>George Clooney</td>
+      <td>0</td>
+      <td>Up in the Air</td>
+      <td>Ryan Bingham</td>
+    </tr>
+    <tr>
+      <th>137</th>
+      <td>2009</td>
+      <td>Actor -- Leading Role</td>
+      <td>Colin Firth</td>
+      <td>0</td>
+      <td>A Single Man</td>
+      <td>George</td>
+    </tr>
+    <tr>
+      <th>138</th>
+      <td>2009</td>
+      <td>Actor -- Leading Role</td>
+      <td>Morgan Freeman</td>
+      <td>0</td>
+      <td>Invictus</td>
+      <td>Nelson Mandela</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>2009</td>
+      <td>Actor -- Leading Role</td>
+      <td>Jeremy Renner</td>
+      <td>0</td>
+      <td>The Hurt Locker</td>
+      <td>Staff Sergeant William James</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>2009</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Matt Damon</td>
+      <td>0</td>
+      <td>Invictus</td>
+      <td>Francois Pienaar</td>
+    </tr>
+    <tr>
+      <th>141</th>
+      <td>2009</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Woody Harrelson</td>
+      <td>0</td>
+      <td>The Messenger</td>
+      <td>Captain Tony Stone</td>
+    </tr>
+    <tr>
+      <th>142</th>
+      <td>2009</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Christopher Plummer</td>
+      <td>0</td>
+      <td>The Last Station</td>
+      <td>Tolstoy</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>2009</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Stanley Tucci</td>
+      <td>0</td>
+      <td>The Lovely Bones</td>
+      <td>George Harvey</td>
+    </tr>
+    <tr>
+      <th>144</th>
+      <td>2009</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Christoph Waltz</td>
+      <td>1</td>
+      <td>Inglourious Basterds</td>
+      <td>Col. Hans Landa</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1040</th>
+      <td>2002</td>
+      <td>Actress -- Leading Role</td>
+      <td>Salma Hayek</td>
+      <td>0</td>
+      <td>Frida</td>
+      <td>Frida Kahlo</td>
+    </tr>
+    <tr>
+      <th>1041</th>
+      <td>2002</td>
+      <td>Actress -- Leading Role</td>
+      <td>Nicole Kidman</td>
+      <td>1</td>
+      <td>The Hours</td>
+      <td>Virginia Woolf</td>
+    </tr>
+    <tr>
+      <th>1042</th>
+      <td>2002</td>
+      <td>Actress -- Leading Role</td>
+      <td>Diane Lane</td>
+      <td>0</td>
+      <td>Unfaithful</td>
+      <td>Connie Sumner</td>
+    </tr>
+    <tr>
+      <th>1043</th>
+      <td>2002</td>
+      <td>Actress -- Leading Role</td>
+      <td>Julianne Moore</td>
+      <td>0</td>
+      <td>Far from Heaven</td>
+      <td>Cathy Whitaker</td>
+    </tr>
+    <tr>
+      <th>1044</th>
+      <td>2002</td>
+      <td>Actress -- Leading Role</td>
+      <td>Renée Zellweger</td>
+      <td>0</td>
+      <td>Chicago</td>
+      <td>Roxie Hart</td>
+    </tr>
+    <tr>
+      <th>1045</th>
+      <td>2002</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Kathy Bates</td>
+      <td>0</td>
+      <td>About Schmidt</td>
+      <td>Roberta Hertzel</td>
+    </tr>
+    <tr>
+      <th>1046</th>
+      <td>2002</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Julianne Moore</td>
+      <td>0</td>
+      <td>The Hours</td>
+      <td>Laura Brown</td>
+    </tr>
+    <tr>
+      <th>1047</th>
+      <td>2002</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Queen Latifah</td>
+      <td>0</td>
+      <td>Chicago</td>
+      <td>Matron Mama Morton</td>
+    </tr>
+    <tr>
+      <th>1048</th>
+      <td>2002</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Meryl Streep</td>
+      <td>0</td>
+      <td>Adaptation</td>
+      <td>Susan Orlean</td>
+    </tr>
+    <tr>
+      <th>1049</th>
+      <td>2002</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Catherine Zeta-Jones</td>
+      <td>1</td>
+      <td>Chicago</td>
+      <td>Velma Kelly</td>
+    </tr>
+    <tr>
+      <th>1157</th>
+      <td>2001</td>
+      <td>Actor -- Leading Role</td>
+      <td>Russell Crowe</td>
+      <td>0</td>
+      <td>A Beautiful Mind</td>
+      <td>John Nash</td>
+    </tr>
+    <tr>
+      <th>1158</th>
+      <td>2001</td>
+      <td>Actor -- Leading Role</td>
+      <td>Sean Penn</td>
+      <td>0</td>
+      <td>I Am Sam</td>
+      <td>Sam Dawson</td>
+    </tr>
+    <tr>
+      <th>1159</th>
+      <td>2001</td>
+      <td>Actor -- Leading Role</td>
+      <td>Will Smith</td>
+      <td>0</td>
+      <td>Ali</td>
+      <td>Muhammad Ali</td>
+    </tr>
+    <tr>
+      <th>1160</th>
+      <td>2001</td>
+      <td>Actor -- Leading Role</td>
+      <td>Denzel Washington</td>
+      <td>1</td>
+      <td>Training Day</td>
+      <td>Alonzo</td>
+    </tr>
+    <tr>
+      <th>1161</th>
+      <td>2001</td>
+      <td>Actor -- Leading Role</td>
+      <td>Tom Wilkinson</td>
+      <td>0</td>
+      <td>In the Bedroom</td>
+      <td>Matt Fowler</td>
+    </tr>
+    <tr>
+      <th>1162</th>
+      <td>2001</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Jim Broadbent</td>
+      <td>1</td>
+      <td>Iris</td>
+      <td>John Bayley</td>
+    </tr>
+    <tr>
+      <th>1163</th>
+      <td>2001</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Ethan Hawke</td>
+      <td>0</td>
+      <td>Training Day</td>
+      <td>Jake</td>
+    </tr>
+    <tr>
+      <th>1164</th>
+      <td>2001</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Ben Kingsley</td>
+      <td>0</td>
+      <td>Sexy Beast</td>
+      <td>Don Logan</td>
+    </tr>
+    <tr>
+      <th>1165</th>
+      <td>2001</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Ian McKellen</td>
+      <td>0</td>
+      <td>The Lord of the Rings: The Fellowship of the R...</td>
+      <td>Gandalf</td>
+    </tr>
+    <tr>
+      <th>1166</th>
+      <td>2001</td>
+      <td>Actor -- Supporting Role</td>
+      <td>Jon Voight</td>
+      <td>0</td>
+      <td>Ali</td>
+      <td>Howard Cosell</td>
+    </tr>
+    <tr>
+      <th>1167</th>
+      <td>2001</td>
+      <td>Actress -- Leading Role</td>
+      <td>Halle Berry</td>
+      <td>1</td>
+      <td>Monster's Ball</td>
+      <td>Leticia Musgrove</td>
+    </tr>
+    <tr>
+      <th>1168</th>
+      <td>2001</td>
+      <td>Actress -- Leading Role</td>
+      <td>Judi Dench</td>
+      <td>0</td>
+      <td>Iris</td>
+      <td>Iris Murdoch</td>
+    </tr>
+    <tr>
+      <th>1169</th>
+      <td>2001</td>
+      <td>Actress -- Leading Role</td>
+      <td>Nicole Kidman</td>
+      <td>0</td>
+      <td>Moulin Rouge</td>
+      <td>Satine</td>
+    </tr>
+    <tr>
+      <th>1170</th>
+      <td>2001</td>
+      <td>Actress -- Leading Role</td>
+      <td>Sissy Spacek</td>
+      <td>0</td>
+      <td>In the Bedroom</td>
+      <td>Ruth Fowler</td>
+    </tr>
+    <tr>
+      <th>1171</th>
+      <td>2001</td>
+      <td>Actress -- Leading Role</td>
+      <td>Renée Zellweger</td>
+      <td>0</td>
+      <td>Bridget Jones's Diary</td>
+      <td>Bridget Jones</td>
+    </tr>
+    <tr>
+      <th>1172</th>
+      <td>2001</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Jennifer Connelly</td>
+      <td>1</td>
+      <td>A Beautiful Mind</td>
+      <td>Alicia Nash</td>
+    </tr>
+    <tr>
+      <th>1173</th>
+      <td>2001</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Helen Mirren</td>
+      <td>0</td>
+      <td>Gosford Park</td>
+      <td>Mrs. Wilson</td>
+    </tr>
+    <tr>
+      <th>1174</th>
+      <td>2001</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Maggie Smith</td>
+      <td>0</td>
+      <td>Gosford Park</td>
+      <td>Constance, Countess of Trentham</td>
+    </tr>
+    <tr>
+      <th>1175</th>
+      <td>2001</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Marisa Tomei</td>
+      <td>0</td>
+      <td>In the Bedroom</td>
+      <td>Natalie Strout</td>
+    </tr>
+    <tr>
+      <th>1176</th>
+      <td>2001</td>
+      <td>Actress -- Supporting Role</td>
+      <td>Kate Winslet</td>
+      <td>0</td>
+      <td>Iris</td>
+      <td>Young Iris Murdoch</td>
+    </tr>
+  </tbody>
+</table>
+<p>200 rows × 6 columns</p>
+</div>
 </div>
 
 </div>
@@ -12287,108 +15701,32 @@ Name: int_age, dtype: float64</pre>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Findings">Findings<a class="anchor-link" href="#Findings">&#182;</a></h1><p>Although we use the average age of each options to represent respondents' ages since we don't have the exact numbers, we can see that age groups of respondents are fairly evenly distributed</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Convert-Income-to-Numeric">Convert Income to Numeric<a class="anchor-link" href="#Convert-Income-to-Numeric">&#182;</a></h1>
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># define function</span>
-<span class="k">def</span> <span class="nf">convertIncome</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">:</span>
-    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-        <span class="k">return</span> <span class="kc">None</span>
-    
-    <span class="n">split_x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">split_x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Prefer&quot;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">None</span>
-    <span class="k">if</span> <span class="n">split_x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;up&quot;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">200000</span>
-    <span class="n">first</span> <span class="o">=</span> <span class="n">split_x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;$&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">second</span> <span class="o">=</span> <span class="n">split_x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;$&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">first</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">second</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span>
-
-<span class="n">data</span><span class="p">[</span><span class="s2">&quot;int_income&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;How much total combined money did all members of your HOUSEHOLD earn last year?&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">convertIncome</span><span class="p">)</span>
-<span class="n">data</span><span class="p">[</span><span class="s2">&quot;int_income&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span> <span class="k">as</span> <span class="nn">sql3</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">sql3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;nominations.db&quot;</span><span class="p">)</span>
+<span class="n">final_nominations</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s2">&quot;nominations&quot;</span><span class="p">,</span><span class="n">conn</span><span class="p">,</span><span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span><span class="n">if_exists</span> <span class="o">=</span> <span class="s2">&quot;replace&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-</div>
-
-<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>count       829.000000
-mean      86486.276840
-std       57789.467567
-min        4999.500000
-25%                NaN
-50%                NaN
-75%                NaN
-max      200000.000000
-Name: int_income, dtype: float64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Findings">Findings<a class="anchor-link" href="#Findings">&#182;</a></h1><p>Although we only have a rough approximation of income, the average income seems to be fairly high, although there is also a large standard deviation.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Correlate-Travel-Distance-And-Income">Correlate Travel Distance And Income<a class="anchor-link" href="#Correlate-Travel-Distance-And-Income">&#182;</a></h1><p>We can now see how the distance someone travels for Thanksgiving dinner relates to their income level. It's safe to hypothesize that people earning less money could be younger, and would travel to their parent's houses for Thanksgiving. People earning more are more likely to have Thanksgiving at their house as a result.</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># See how far people earning under 50000 will travel.</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;int_income&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">50000</span><span class="p">][</span><span class="s2">&quot;How far will you travel for Thanksgiving?&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;int_income&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">50000</span><span class="p">][</span><span class="s2">&quot;How far will you travel for Thanksgiving?&quot;</span><span class="p">]))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">query_one</span> <span class="o">=</span> <span class="s2">&quot;pragma table_info(nominations);&quot;</span>
+<span class="n">query_two</span> <span class="o">=</span> <span class="s2">&quot;select * from nominations limit 10;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query_one</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query_two</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">())</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12399,13 +15737,12 @@ Name: int_income, dtype: float64</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Thanksgiving is happening at my home--I won&#39;t travel at all                         0.381295
-Thanksgiving is local--it will take place in the town I live in                     0.330935
-Thanksgiving is out of town but not too far--it&#39;s a drive of a few hours or less    0.230216
-Thanksgiving is out of town and far away--I have to drive several hours or fly      0.057554
-Name: How far will you travel for Thanksgiving?, dtype: float64
+<pre>[(0, &#39;Year&#39;, &#39;INTEGER&#39;, 0, None, 0), (1, &#39;Category&#39;, &#39;TEXT&#39;, 0, None, 0), (2, &#39;Nominee&#39;, &#39;TEXT&#39;, 0, None, 0), (3, &#39;Won&#39;, &#39;INTEGER&#39;, 0, None, 0), (4, &#39;Movie&#39;, &#39;TEXT&#39;, 0, None, 0), (5, &#39;Character&#39;, &#39;TEXT&#39;, 0, None, 0)]
+[(2010, &#39;Actor -- Leading Role&#39;, &#39;Javier Bardem&#39;, 0, &#39;Biutiful &#39;, &#39;Uxbal&#39;), (2010, &#39;Actor -- Leading Role&#39;, &#39;Jeff Bridges&#39;, 0, &#39;True Grit &#39;, &#39;Rooster Cogburn&#39;), (2010, &#39;Actor -- Leading Role&#39;, &#39;Jesse Eisenberg&#39;, 0, &#39;The Social Network &#39;, &#39;Mark Zuckerberg&#39;), (2010, &#39;Actor -- Leading Role&#39;, &#39;Colin Firth&#39;, 1, &#34;The King&#39;s Speech &#34;, &#39;King George VI&#39;), (2010, &#39;Actor -- Leading Role&#39;, &#39;James Franco&#39;, 0, &#39;127 Hours &#39;, &#39;Aron Ralston&#39;), (2010, &#39;Actor -- Supporting Role&#39;, &#39;Christian Bale&#39;, 1, &#39;The Fighter &#39;, &#39;Dicky Eklund&#39;), (2010, &#39;Actor -- Supporting Role&#39;, &#39;John Hawkes&#39;, 0, &#34;Winter&#39;s Bone &#34;, &#39;Teardrop&#39;), (2010, &#39;Actor -- Supporting Role&#39;, &#39;Jeremy Renner&#39;, 0, &#39;The Town &#39;, &#39;James Coughlin&#39;), (2010, &#39;Actor -- Supporting Role&#39;, &#39;Mark Ruffalo&#39;, 0, &#39;The Kids Are All Right &#39;, &#39;Paul&#39;), (2010, &#39;Actor -- Supporting Role&#39;, &#39;Geoffrey Rush&#39;, 0, &#34;The King&#39;s Speech &#34;, &#39;Lionel Logue&#39;)]
 </pre>
 </div>
 </div>
@@ -12413,314 +15750,6 @@ Name: How far will you travel for Thanksgiving?, dtype: float64
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># See how far people earning over 150000 will travel.</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;int_income&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">150000</span><span class="p">][</span><span class="s2">&quot;How far will you travel for Thanksgiving?&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;int_income&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">150000</span><span class="p">][</span><span class="s2">&quot;How far will you travel for Thanksgiving?&quot;</span><span class="p">]))</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Thanksgiving is happening at my home--I won&#39;t travel at all                         0.471429
-Thanksgiving is local--it will take place in the town I live in                     0.242857
-Thanksgiving is out of town but not too far--it&#39;s a drive of a few hours or less    0.178571
-Thanksgiving is out of town and far away--I have to drive several hours or fly      0.107143
-Name: How far will you travel for Thanksgiving?, dtype: float64
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Findings">Findings<a class="anchor-link" href="#Findings">&#182;</a></h1><p>It appears that more people with high income have Thanksgiving at home than people with low income. This may be because younger students, who don't have a high income, tend to go home, whereas parents, who have higher incomes, don't.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Link-Friendship-and-Age">Link Friendship and Age<a class="anchor-link" href="#Link-Friendship-and-Age">&#182;</a></h1><p>There are two columns which directly pertain to friendship, <em>Have you ever tried to meet up with hometown friends on Thanksgiving night?</em>, and <em>Have you ever attended a "Friendsgiving?</em>. In the US, a "Friendsgiving" is when instead of traveling home for the holiday, you celebrate it with friends who live in your area. Both questions seem skewed towards younger people. Let's see if this hypothesis holds up.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
-    <span class="n">index</span> <span class="o">=</span> <span class="s2">&quot;Have you ever tried to meet up with hometown friends on Thanksgiving night?&quot;</span><span class="p">,</span> 
-    <span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;Have you ever attended a &quot;Friendsgiving?&quot;&#39;</span><span class="p">,</span> 
-    <span class="n">values</span> <span class="o">=</span> <span class="s2">&quot;int_age&quot;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Have you ever attended a "Friendsgiving?"</th>
-      <th>No</th>
-      <th>Yes</th>
-    </tr>
-    <tr>
-      <th>Have you ever tried to meet up with hometown friends on Thanksgiving night?</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>No</th>
-      <td>46.731388</td>
-      <td>42.042105</td>
-    </tr>
-    <tr>
-      <th>Yes</th>
-      <td>46.357923</td>
-      <td>39.578488</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
-    <span class="n">index</span> <span class="o">=</span> <span class="s2">&quot;Have you ever tried to meet up with hometown friends on Thanksgiving night?&quot;</span><span class="p">,</span> 
-    <span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;Have you ever attended a &quot;Friendsgiving?&quot;&#39;</span><span class="p">,</span> 
-    <span class="n">values</span> <span class="o">=</span> <span class="s2">&quot;int_income&quot;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Have you ever attended a "Friendsgiving?"</th>
-      <th>No</th>
-      <th>Yes</th>
-    </tr>
-    <tr>
-      <th>Have you ever tried to meet up with hometown friends on Thanksgiving night?</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>No</th>
-      <td>89456.824480</td>
-      <td>83124.552632</td>
-    </tr>
-    <tr>
-      <th>Yes</th>
-      <td>89553.119048</td>
-      <td>76315.319079</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Findings">Findings<a class="anchor-link" href="#Findings">&#182;</a></h1><p>It appears that people who are younger are more likely to attend a Friendsgiving, and try to meet up with friends on Thanksgiving.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Gender-and-Black-Friday-Sales-Shopping">Gender and Black Friday Sales Shopping<a class="anchor-link" href="#Gender-and-Black-Friday-Sales-Shopping">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Will you shop any Black Friday sales on Thanksgiving Day?&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Yes&quot;</span><span class="p">][</span><span class="s2">&quot;What is your gender?&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
-<span class="n">s</span><span class="p">[</span><span class="s2">&quot;Female&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;Female&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;What is your gender?&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Female&quot;</span><span class="p">])</span>
-<span class="n">s</span><span class="p">[</span><span class="s2">&quot;Male&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;Male&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;What is your gender?&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Male&quot;</span><span class="p">])</span>
-<span class="n">s</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>Female    0.246602
-Male      0.219907
-Name: What is your gender?, dtype: float64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">data</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
-    <span class="n">index</span> <span class="o">=</span> <span class="s1">&#39;Will you shop any Black Friday sales on Thanksgiving Day?&#39;</span><span class="p">,</span>
-    <span class="n">columns</span> <span class="o">=</span> <span class="s2">&quot;What is your gender?&quot;</span><span class="p">,</span>
-    <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;int_age&quot;</span><span class="p">,</span> <span class="s2">&quot;int_income&quot;</span><span class="p">],</span>
-    <span class="n">aggfunc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th></th>
-      <th colspan="2" halign="left">int_age</th>
-      <th colspan="2" halign="left">int_income</th>
-    </tr>
-    <tr>
-      <th>What is your gender?</th>
-      <th>Female</th>
-      <th>Male</th>
-      <th>Female</th>
-      <th>Male</th>
-    </tr>
-    <tr>
-      <th>Will you shop any Black Friday sales on Thanksgiving Day?</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>No</th>
-      <td>46.233247</td>
-      <td>46.483680</td>
-      <td>88529.402985</td>
-      <td>93529.448505</td>
-    </tr>
-    <tr>
-      <th>Yes</th>
-      <td>40.799213</td>
-      <td>39.215789</td>
-      <td>72022.259091</td>
-      <td>71867.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Findings">Findings<a class="anchor-link" href="#Findings">&#182;</a></h1><ul>
-<li>About 24.6% female goes shopping on black friday or Thanksgiving sales, whereas less men(21.9%) do the same.</li>
-<li>Young people who also have lower income, are more likely to go shopping on Thanksgiving holiday.</li>
-</ul>
-
-</div>
-</div>
 </div>
     </div>
   </div>
